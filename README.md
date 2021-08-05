@@ -4,7 +4,7 @@
 
 **Purpose**
 ------------------------
-Perhaps one of the most important factors in hiring and job retention is an employee's salary. Companies that compete within the same sector should always have an indicator of how much they should compensate for their own job openings. This in return allows them to retain their employees and compete for talent. This project aims to examine a set of job postings with their corresponding salaries and predict salaries for a new set of job postings.
+Perhaps one of the most important factors in hiring and job retention is an employee's salary. Companies that compete within the same sector should always have an indicator of how much they should compensate for their own job openings. This in return allows them to retain their employees and compete for talent not only within their own sectors but others as well. This project aims to examine a set of job postings with their corresponding salaries and predict salaries for a new set of job postings.
 
 **Datasets**
 ------------------------
@@ -51,7 +51,7 @@ Upon checking for missing values, duplicated values, and values where salary is 
 
 **Feature Engineering**
 ------------------------
-
+![Snip20210805_19](https://user-images.githubusercontent.com/24769002/128408799-12dc3c9c-8178-493c-b6d2-2435c802093f.png)
 
 **Regression Models**
 ------------------------
