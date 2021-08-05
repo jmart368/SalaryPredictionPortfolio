@@ -63,8 +63,8 @@ Overall, average salary as a metric provides a more accurate picture when compar
 ![Snip20210805_19](https://user-images.githubusercontent.com/24769002/128408799-12dc3c9c-8178-493c-b6d2-2435c802093f.png)
 
 In summary, based on the above matrix we can observe the following:
-* There a is postive relationship with salary and jobType, degree, major, industry, yearsExperience
-* There is negative relationship with salary and milesFromMetropolis
+* There is a postive relationship with salary and jobType, degree, major, industry, yearsExperience
+* There is a negative relationship with salary and milesFromMetropolis
 
 **Regression Models**
 ------------------------
