@@ -55,20 +55,22 @@ Business and Engineering majors tend to make more in average salaries in compari
 The Finance and Oil Industry have higher average salaries than Education, Service, Auto, Health, and Web.
 
 
-Overall, average salary as a metric provides a more accurate picture when comparing average salary to other features. Other things that were noted among other freatures were:
+Overall, average salary as a metric provides a more accurate picture when comparing average salary amongst other features. Other things that were observed for comparison were as follows:
 * There is a postive relationship or connection with having a higher salary and more years of experience.
 * There is also a negative relationship or connection with having a higher salary and the distance a job is located from a major city.
 
-**Feature Engineering**
-------------------------
+### Correlation Matrix
 ![Snip20210805_19](https://user-images.githubusercontent.com/24769002/128408799-12dc3c9c-8178-493c-b6d2-2435c802093f.png)
+
+
 
 **Regression Models**
 ------------------------
 
 **Feature Importance**
 ------------------------
-![Snip20210805_24](https://user-images.githubusercontent.com/24769002/128404804-e8ec4c8d-3c04-462f-9787-f97649aec4a9.png)
+![Snip20210805_25](https://user-images.githubusercontent.com/24769002/128416275-07a10310-41bc-4ee8-94a1-d69446f3248c.png)
+
 
 **Conclusion**
 ------------------------
