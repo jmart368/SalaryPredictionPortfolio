@@ -4,11 +4,11 @@
 
 **Purpose**
 ------------------------
-Perhaps one of the most important factors in hiring and job retention is an employee's salary. Companies that compete within the same sector should always have an indicator of how much they should compensate for their own job openings. This in return allows them to retain their employees and compete for talent not only within their own sectors but others as well. This project aims to examine a set of job postings with their corresponding salaries and predict salaries for a new set of job postings.
+Perhaps one of the most important factors in hiring and job retention is an employee's salary. Companies that compete within the same sector should always have an indicator of how much they should compensate for their own job openings. This in return allows them to retain their employees and compete for talent not only within their own sectors but other deifferent sectors as well. This project aims to examine a set of job postings with their corresponding salaries and predict salaries for a new set of job postings. As an example salary prediction project, this would be useful in arbitrating the salaries with the use of machine learning models that would predict those values.
 
 **Datasets**
 ------------------------
-The following data sets were provided:
+The following data sets were given at beginning of this project:
 
 * **train_features.csv** - This file represents a total of 1,000,000 rows with 8 columns (header not included) where each row examines a unique job id along with list of attributes relating to that unique job id.
 
@@ -21,33 +21,43 @@ The following data sets were provided:
 * **jobId** - Primary key which identifies a distinct job
 * **companyId** - Unique Id that indentifies a company
 * **jobType** - Defines the level of position a such as CEO, CFO CTO, JANITOR, JUNIOR, MANAGER, SENIOR, VP
-* **degree** - Describes the level education from NONE up to a DOCTORAL degree
+* **degree** - Describes the level education such as NONE, HIGH SCHOOL, BACHELORS, MASTERS, DOCTORAL diploma
 * **major** - Represents a specific level of specialization at a college or university
-* **industry** - Characterizes a specific sector or industry 
-* **yearsExperience** - Specifies the required number of years for a job 
-* **milesFromMetropolis** - Designates the distance from a major city in miles
+* **industry** - Characterizes a specific sector or industry such as OIL, FINANCE, EDUCATION, HEALTH, etc
+* **yearsExperience** - Specifies the required number of years for the indicated/listed job 
+* **milesFromMetropolis** - Designates the job distance from a major city in miles
 
 **Feature Summary**
 ------------------------
 ### Distribution Plots
-![Snip20210805_23](https://user-images.githubusercontent.com/24769002/128404699-f61843cd-c034-4921-95ed-f401a377e478.png)
+![Snip20210805_23](https://user-images.githubusercontent.com/24769002/128412053-c2feb56c-aaf9-4efa-9beb-e47c0fa6ff8c.png)
 
-Upon checking for missing values, duplicated values, and values where salary is greater than or equal to $0, it can be noted that the average salary is whithin the range of middle salary. However, due to some exceptions where certain jobs are being paid more than $220, it can be concluded that average salaries within our data will be greater than the median. This means that by looking at average salary (i.e. mean), the data itself will give a better indication on how salaries are allocated in comparison to other features.  
+Upon checking for missing values, duplicated values, and values where salary is greater than or equal to $0, it can be noted that the average salary is whithin the range of the middle salary. However, due to some exceptions where certain jobs are being paid more than $220 (see graph above), it can be concluded that average salaries within our data will be greater than the median. This means that by looking at average salary (i.e. mean), the data itself will give a better indication on how salaries are allocated. This will allow us to compare average salaries to other features.
 
-### Salary vs. Job Type
+### Average Salary vs. Job Type
 ![Snip20210805_10](https://user-images.githubusercontent.com/24769002/128395976-a52c155f-3767-41f9-8a96-63ff44d3784c.png)
 
+Comparing the average salary by job type shows that the c-suite postions end up making the most.
 
-### Salary vs Degree
+### Average Salary vs. Degree
 ![Snip20210805_12](https://user-images.githubusercontent.com/24769002/128395990-de7a2af1-693e-442b-b636-cfaf888ab4e8.png)
 
-### Salary vs Major
+Those who have at least bachelors degree or higher tend to have a higher than average salary.
+
+### Average Salary vs. Major
 ![Snip20210805_13](https://user-images.githubusercontent.com/24769002/128396007-fe585bd9-ffa8-4fb9-9053-0b5f7c3e4a4e.png)
 
-### Salary vs Industry
+Business and Engineering majors tend to make more in average salaries in comparison to other majors.
+
+### Average Salary vs. Industry
 ![Snip20210805_15](https://user-images.githubusercontent.com/24769002/128396023-181e3026-0330-4a12-8c75-af4f25841bb6.png)
 
+The Finance and Oil Industry have higher average salaries than Education, Service, Auto, Health, and Web.
 
+
+Overall, average salary as a metric provides a more accurate picture when comparing average salary to other features. Other things that were noted among other freatures were:
+* There is a postive relationship or connection with having a higher salary and more years of experience.
+* There is also a negative relationship or connection with having a higher salary and the distance a job is located from a major city.
 
 **Feature Engineering**
 ------------------------
