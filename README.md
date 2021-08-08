@@ -14,7 +14,7 @@ The following data sets were provided:
 
 * **train_salaries.csv** - This file represent a total of 1,000,000 rows with 2 columns (header not included) where each row represents a unique job id along with its corresponfing salary. This file along with train_features.csv will be used for machine learning models.  
 
-* **test_features.csv** - Identical to train_features.csv, where each row examines a unique job id along with list of attributes relating to that unique job. This file will be used to predict salaries
+* **test_features.csv** - Identical to train_features.csv, where each row examines a unique job id along with list of attributes relating to that unique job. This file will be used to predict salaries.
 
 **Feature Definitions**
 ------------------------
@@ -68,12 +68,38 @@ In summary, based on the above matrix we can observe the following:
 
 **Regression Models**
 ------------------------
+The following models were used to asses the prediction of our salaries for the following reasons:
+  * Linear Regression: Basic regression model which can be used for any data set and size.
+  * Random Forest: A low bias model that is very fast and powerful to solve regression/classificiation problems.
+  * Gradient Boosting: A fast and high performanced model that can create simple individual models by combining them into a new one.
 
+The Mean Squared Error is used to check how close our estimates are to the actual values. In reference to predciting salaries, the lower the MSE, the better our prediction. A 0 MSE means that the model is perfect.
+
+|Models|Mean Squared Error|
+|---|---|
+|Linear Regression|385.698613|
+|Random Forest|383.789228|
+|Gradient Boosting Regressor|361.850797|
+
+Based on the above models, Gradient Boosting Regressor preformed better in terms of predicting salaries for the given job ids. 
+
+|jobId|predicted_salary|
+|---|---|
+|JOB1362685407687|143.293156|
+|JOB1362685407688|140.000311|
+|JOB1362685407689|136.299671|
+|JOB1362685407690|125.276273|
+|JOB1362685407691|116.435501|
+
+Based on implementing GBR on our test_features.csv, we see that Gradient Boosting was able to predict the salaries for the first 5 Jobs.
 
 **Feature Importance**
 ------------------------
 ![Snip20210805_25](https://user-images.githubusercontent.com/24769002/128416275-07a10310-41bc-4ee8-94a1-d69446f3248c.png)
 
+Upon extracting a feature importance, we can see that years of experience and miles from metropolis are two of the most important features in predicting salaries. Why is this important? Knowing this information allows to adjust our features so that we may inprove our models.
 
-**Conclusion**
+**Closing Remarks**
 ------------------------
+Understanding how much a job should pay would be better useful if allow prediction models to asses those salaries. This in return would reduce biases in the workplace and allow companies/organizations to better compete for talent. We know the Gradient Boosting Regressor is better model to predict salaries. How can we improve this model? We need to adjust our features and adjust our models. Also exploring other models as well would be useful in prediction. For simplicity's sake, we decided to choose only 3 models.
+
