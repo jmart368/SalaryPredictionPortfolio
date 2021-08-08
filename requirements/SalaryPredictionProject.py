@@ -7,7 +7,7 @@
 
 # ### ---- 1 Define the problem ----
 
-# The following is an examination of a set of job postings with their indicated salaries. Given this historical data and hiring trend, Human Resources would want to predict an employee's salary based on factors such as years of experience, job type, educational background, industry, and distance from metropolis 
+# This project aims to examine a set of job postings with their corresponding salaries and predict salaries for a new set of job postings. Given this historical data in csv format, we explore the steps to predict an employee's salary based on factors such as years of experience, job type, educational background, industry, and distance from metropolis 
 
 # In[1]:
 
@@ -89,7 +89,7 @@ train_salaries_df.info()
 train_salaries_df.isnull().sum()
 
 
-# After confirming that no null values exist, we can therefore merge the train features and train salaries into one new dataframe which we can refer to as train_data_df.
+# After confirming that no null values exist, the train features and train salaries dataframes can be merged into a new dataframe referred to as train_data_df.
 
 # In[10]:
 
@@ -109,7 +109,7 @@ train_data.isnull().sum()
 train_data.shape
 
 
-# When we look at the dimensions of our data we can conclude that there are 1,000,000 rows representing the job profiles and 9 columns representing numerical/categorical data.
+# Looking at the dimensions of our data, there are 1,000,000 rows representing the job profiles and 9 columns representing numerical/categorical data.
 
 # In[12]:
 
@@ -125,7 +125,7 @@ train_data.duplicated().sum()
 train_data[train_data['salary'] <= 0]
 
 
-# When factoring the salaries where the salary <= 0, we can note that only 5 results rendered a 0 value.
+# When factoring the salaries where the salary <= 0, note that only 5 results rendered a 0 value.
 
 # Since these 5 results are immaterial in comparison to 1,000,000 job profiles, it would be easier to drop these rows rather than guess the missing salaries. Guessing mean salaries would hinder the quality of our data set. Using a Mean or Median value as replacement would also overinflate the salary of a Junior level candidate as well as underinflate the salary of a Manager or VP.
 
@@ -172,16 +172,16 @@ train_data.describe(include = ['object'])
 # Summarize the target variable - Salary
 plt.figure(figsize = (18,5))
 plt.subplot(1,2,1)
-sns.boxplot(train_data.salary, color="Green")
+sns.boxplot(train_data.salary, color="lightskyblue")
 plt.title("Salary Distribution")
 plt.ylabel('Density')
 plt.subplot(1,2,2)
-sns.distplot(train_data.salary, bins=20, color="Green")
+sns.distplot(train_data.salary, bins=20, color="lightskyblue")
 plt.title('Salary Distribution')
 plt.show()
 
 
-# Based on the Salary Distribution plots, we can see that the target variable is normally distributed with a right skewness due to some outliers beyond the $220 range. We can further confirm with the use of our outlier check function we do have some outliers whilet extracting the upper and lower range.
+# Based on the Salary Distribution plots, it is noted that the target variable is normally distributed with a right skewness due to some outliers beyond the $220 range. This can be further confirmed with the use of the outlier check function where we can extract the upper and lower range salary values.
 
 # In[20]:
 
@@ -225,7 +225,7 @@ def plot_features(df, col):
         col_mean.sort_values().plot(kind='bar')
         plt.xticks(rotation=45)
         plt.xlabel(col)
-        plt.ylabel('Averge salary by'+ ' ' + col)
+        plt.ylabel('Average salary by'+ ' ' + col)
         plt.subplot(1,2,2)
         sns.boxplot(x=col, y='salary', data=df)
         plt.xticks(rotation=45)    
@@ -249,12 +249,12 @@ for features in train_data_feat:
 
 
 # A couple of observations to note from the above:
-# * When we look at average salary by job type, c-suite postions end up making the most in salary.
-# * Those who have at least bachelors degree or higher, tend to have a higher than average salary.
-# * Business and Engineering majors tend to make more in average salaries in comparison toother majors.
+# * Looking at average salary by job type, the c-suite postions end up making the most in average salary.
+# * Those who have at least bachelors degree or higher tend to have a higher than average salary.
+# * Business and Engineering majors tend to make more in average salaries in comparison to other majors.
 # * The Finance and Oil Industry have higher average salaries than Education, Service, Auto, Health, and Web.
 # * There is a postive correlation with having a higher salary and more years of experience.
-# * There is a negative correlation with having a higher salary and living further way from a major city.
+# * There is a negative correlation with having a higher salary and the distance a job is located from a major city.
 
 # In[24]:
 
@@ -293,12 +293,9 @@ plt.yticks(rotation=0)
 plt.show()
 
 
-# Based on the above correlation matrix we can note that there is a negative correlation with the following variables,
-# * salary and milesFromMetropolis
-# * industry and milesFromMetropolis
-# * yearsExperience and major
-# 
-# All other variables are positively correlated with degree and major having the strongest correlation.
+# Based on the above, we can note the following 
+# * There is a postive correlation with salary and jobType, degree, major, industry, yearsExperience
+# * There is a negative correlation with salary and milesFromMetropolis
 
 # ### ---- 5 Establish a baseline ----
 
@@ -320,8 +317,6 @@ print(f'The baseline model Mean Squared Error is: {mse}')
 
 # ### ---- 6 Hypothesize solution ----
 
-# Brainstorm 3 models that you think may improve results over the baseline model based
-# 
 # **Linear Regression:** Basic regression model which can be used for any data set and size. It is also a straighforward model used for prediction.
 # 
 # **Random Forest:** A low bias model that is very fast and powerful to solve regression and classficiation problems. 
@@ -516,6 +511,6 @@ feature_importance.sort_values(by='importance', ascending=False, inplace=True)
 
 
 plt.figure(figsize=(18,10))
-sns.barplot(x='importance', y='features', data=feature_importance)
+sns.barplot(x='importance', y='features',color='lightskyblue', data=feature_importance)
 plt.show();
 
