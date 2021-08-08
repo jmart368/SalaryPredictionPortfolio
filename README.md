@@ -4,7 +4,7 @@
 
 **Purpose**
 ------------------------
-Perhaps one of the most important factors in hiring and job retention is an employee's salary. Companies that compete within the same sector should always have an indicator of how much they should compensate for their own job openings. This in return allows them to retain their employees and compete for talent not only within their own sectors but other deifferent sectors as well. This project aims to examine a set of job postings with their corresponding salaries and predict salaries for a new set of job postings. As an example salary prediction project, this would be useful in arbitrating the salaries with the use of machine learning models that would predict those values.
+Perhaps one of the most important factors in hiring and job retention is an employee's salary. Companies that compete within the same sector should always have an indicator of how much they should compensate for their own job openings. This in return allows them to retain their employees and compete for talent within their own sectors and other different sectors. This project aims to examine a set of job postings with their corresponding salaries and predict salaries for a new set of job postings. As an example salary prediction project, this would be useful in arbitrating the salaries with the use of machine learning models that would predict those values.
 
 **Datasets**
 ------------------------
@@ -32,7 +32,7 @@ The following data sets were provided:
 ### Distribution Plots
 ![Snip20210805_23](https://user-images.githubusercontent.com/24769002/128412053-c2feb56c-aaf9-4efa-9beb-e47c0fa6ff8c.png)
 
-Upon checking for missing values, duplicated values, and values where salary is greater than or equal to $0, it can be noted that the average salary is whithin the range of the middle salary. However, due to some exceptions where certain jobs are being paid more than $220 (see graph above), it can be concluded that average salaries within our data will be greater than the median. This means that by looking at average salary (i.e. mean), the data itself will give a better indication on how salaries are allocated. This will allow us to compare average salaries to other features.
+Upon checking for missing values, duplicated values, and values where salary is greater than or equal to $0, it can be noted that the average salary is within the range of the middle salary. However, due to some exceptions where certain jobs are being paid more than $220 (see graph above), it can be concluded that average salaries within our data will be greater than the median. This means that by looking at average salary (i.e. mean), the data itself will give us a better indication on how salaries are allocated. This will allow us to compare average salaries to other features.
 
 ### Average Salary vs. Job Type
 ![Snip20210805_10](https://user-images.githubusercontent.com/24769002/128395976-a52c155f-3767-41f9-8a96-63ff44d3784c.png)
@@ -54,17 +54,17 @@ Business and Engineering majors tend to make more in average salaries in compari
 
 The Finance and Oil Industry have higher average salaries than Education, Service, Auto, Health, and Web.
 
-
-Overall, average salary as a metric provides a more accurate picture when comparing average salary amongst other features. Other things that were observed for comparison were as follows:
+Other things that were observed for comparison were as follows:
 * There is a postive relationship or connection with having a higher salary and more years of experience.
 * There is also a negative relationship or connection with having a higher salary and the distance a job is located from a major city.
 
 ### Correlation Matrix
 ![Snip20210805_19](https://user-images.githubusercontent.com/24769002/128408799-12dc3c9c-8178-493c-b6d2-2435c802093f.png)
 
-In summary, based on the above matrix we can observe the following:
+Based on the above matrix, we can observe the following:
 * There is a postive relationship with salary and jobType, degree, major, industry, yearsExperience
 * There is a negative relationship with salary and milesFromMetropolis
+The Matrix itself can be used to better understand the feature relationship amongst each other.
 
 **Regression Models**
 ------------------------
@@ -91,15 +91,17 @@ Based on the above models, Gradient Boosting Regressor preformed better in terms
 |JOB1362685407690|125.276273|
 |JOB1362685407691|116.435501|
 
-Based on implementing GBR on our test_features.csv, we see that Gradient Boosting was able to predict the salaries for the first 5 Jobs.
+Based on implementing GBR, we can see that Gradient Boosting was able to predict the salaries for the first 5 Jobs as noted from the above table.
 
 **Feature Importance**
 ------------------------
 ![Snip20210805_25](https://user-images.githubusercontent.com/24769002/128416275-07a10310-41bc-4ee8-94a1-d69446f3248c.png)
 
-Upon extracting a feature importance, we can see that years of experience and miles from metropolis are two of the most important features in predicting salaries. Why is this important? Knowing this information allows to adjust our features so that we may inprove our models.
+Upon extracting our feature importance bar graph, we can see that years of experience and miles from metropolis are two of the most important features in predicting salaries. Why is this important? Well, knowing this information allows to adjust our features so that we may inprove our models.
 
 **Closing Remarks**
 ------------------------
-Understanding how much a job should pay would be better useful if allow prediction models to asses those salaries. This in return would reduce biases in the workplace and allow companies/organizations to better compete for talent. We know the Gradient Boosting Regressor is better model to predict salaries. How can we improve this model? We need to adjust our features and adjust our models. Also exploring other models as well would be useful in prediction. For simplicity's sake, we decided to choose only 3 models.
+![Snip20210804_2](https://user-images.githubusercontent.com/24769002/128647371-8816a164-fea2-4199-b3f2-2f2ebbed15af.png)
+
+Understanding how much a job should pay would be better useful if we allow prediction models to asses those salaries. This in return would reduce biases in the workplace and allow companies/organizations to better compete/fund talent. We know that Gradient Boosting Regressor is a better model to predict salaries. How can we improve this model? We need to adjust our features and tune our models. Also exploring other models as well would be useful in prediction. For simplicity's sake, we decided to choose only 3 models.
 
