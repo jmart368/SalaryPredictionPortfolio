@@ -77,9 +77,9 @@ The Mean Squared Error is used to check how close our estimates are to the actua
 
 |Models|Mean Squared Error|
 |---|---|
-|Linear Regression|385.698613|
-|Random Forest|383.789228|
-|Gradient Boosting Regressor|361.850797|
+|Linear Regression|383.537939|
+|Random Forest|381.517491|
+|Gradient Boosting Regressor|360.656776|
 
 Based on the above models, Gradient Boosting Regressor preformed better in terms of predicting salaries for the given job ids. 
 
